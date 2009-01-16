@@ -1,0 +1,11 @@
+(section
+  (title "orientation")
+
+  (subsection
+    (title "overview")
+
+    (para "This package provides a set of Ada bindings to the "
+      (link-ext "http://www.postgresql.org" "PostgreSQL") " C interface ("
+      (item package "libpq") ")."))
+
+) ; end of section

@@ -1,0 +1,17 @@
+(section
+  (ref "pgada_database_port")
+  (title "PGAda.Database.Port")
+  (para function_desc "Return database port.")
+  (subsection
+    (title "synopsis")
+    (para-verbatim function_synopsis
+"with PGAda.Database;
+
+function Port (Connection : in PGAda.Database.Connection_T) return Positive;
+"))
+  (subsection
+    (title "description")
+    (para
+      "The " (item function "Port") " function returns the numeric
+      port used for the database connection " (item function_param "Connection")
+      ".")))

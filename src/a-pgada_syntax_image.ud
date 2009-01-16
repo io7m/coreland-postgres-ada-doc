@@ -1,0 +1,19 @@
+(section
+  (ref "pgada_syntax_image")
+  (title "PGAda.Syntax.Image")
+  (para function_desc "Return sanitized string to pass to SQL.")
+  (subsection
+    (title "synopsis")
+    (para-verbatim function_synopsis
+"with PGAda.Syntax;
+
+function Image (I : Integer) return String;
+"))
+  (subsection
+    (title "description")
+    (para
+      "The " (item function "Image") " function is equivalent to: ")
+    (para-verbatim example
+"Ada.Strings.Fixed.Trim (Integer'Image (I), Ada.Strings.Left);")
+    (para "In other words, it removes any possible leading space
+      returned by the 'Image attribute.")))

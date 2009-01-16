@@ -1,0 +1,35 @@
+(section
+  (ref "pgada_database")
+  (title "PGAda.Database api reference")
+
+  (para "The " (item ada_package "PGAda.Database") " package is
+    the main API package for communication with a database server.
+    It is a \"thick\" binding to the standard C interface.")
+
+  (contents)
+
+  (include "a-pgada-database-types.ud")
+
+  (include "a-pgada_database_clear.ud")
+  (include "a-pgada_database_command_status.ud")
+  (include "a-pgada_database_db.ud")
+  (include "a-pgada_database_error_code.ud")
+  (include "a-pgada_database_error_message.ud")
+  (include "a-pgada_database_exec.ud")
+  (include "a-pgada_database_field_name.ud")
+  (include "a-pgada_database_finish.ud")
+  (include "a-pgada_database_get_length.ud")
+  (include "a-pgada_database_get_value.ud")
+  (include "a-pgada_database_host.ud")
+  (include "a-pgada_database_is_null.ud")
+  (include "a-pgada_database_number_of_fields.ud")
+  (include "a-pgada_database_number_of_tuples.ud")
+  (include "a-pgada_database_oid_status.ud")
+  (include "a-pgada_database_options.ud")
+  (include "a-pgada_database_port.ud")
+  (include "a-pgada_database_reset.ud")
+  (include "a-pgada_database_result_error_field.ud")
+  (include "a-pgada_database_result_status.ud")
+  (include "a-pgada_database_set_db_login.ud")
+  (include "a-pgada_database_status.ud")
+)

@@ -1,0 +1,42 @@
+(section
+  (title "types")
+
+  (subsection
+    (title "Connection_T")
+    (para-verbatim ada_type_synopsis
+"type Connection_T is
+  new Ada.Finalization.Limited_Controlled with private;")
+    (para "The " (item ada_type "Connection_T") " type represents
+      a connection to a database server."))
+
+  (subsection
+    (title "Connection_Status_T")
+    (para-verbatim ada_type_synopsis
+"type Connection_Status_T is (Connection_OK, Connection_Bad);")
+    (para "The " (item ada_type "Connection_Status_T") " type represents
+      the status of a given connection."))
+
+  (subsection
+    (title "Result_T")
+    (para-verbatim ada_type_synopsis
+"type Result_T is
+  new Ada.Finalization.Limited_Controlled with private;")
+    (para "The " (item ada_type "Result_T") " type represents
+      the result of executing a set of SQL statements."))
+
+  (subsection
+    (title "Exec_Status_T")
+    (para-verbatim ada_type_synopsis
+"type Exec_Status_T is
+ (Empty_Query,
+  Command_OK,
+  Tuples_OK,
+  Copy_Out,
+  Copy_In,
+  Bad_Response,
+  Non_Fatal_Error,
+  Fatal_Error);")
+    (para "The " (item ada_type "Exec_Status_T") " type represents
+      the status of an executed set of SQL statements. A syntax error
+      in SQL code is represented by the " (item ada_enum_element "Fatal_Error")
+      " value, for example.")))

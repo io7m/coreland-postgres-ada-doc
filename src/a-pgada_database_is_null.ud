@@ -1,0 +1,20 @@
+(section
+  (ref "pgada_database_is_null")
+  (title "PGAda.Database.Is_Null")
+  (para function_desc "Check if value is null.")
+  (subsection
+    (title "synopsis")
+    (para-verbatim function_synopsis
+"with PGAda.Database;
+
+function Is_Null
+ (Result      : in PGAda.Database.Result_T;
+  Tuple_Index : in Positive;
+  Field_Index : in Positive) return Boolean;
+"))
+  (subsection
+    (title "description")
+    (para
+      "The " (item function "Is_Null") " function returns true
+      if the value at row " (item function_param "Tuple_Index")
+      ", column " (item function_param "Field_Index") " is null.")))

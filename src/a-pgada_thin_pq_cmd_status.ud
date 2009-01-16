@@ -1,0 +1,17 @@
+(section
+  (ref "pgada_thin_pq_cmd_status")
+  (title "PGAda.Thin.PQ_Cmd_Status")
+  (para function_desc "XXX: TODO.")
+  (subsection
+    (title "synopsis")
+    (para-verbatim function_synopsis
+"with PGAda.Thin;
+
+function PQ_Cmd_Status
+  (DB            : in PGAda.Database.Connection_T'Class;
+   Sequence_Name : in String) return Integer;
+"))
+  (subsection
+    (title "description")
+    (para
+      "The " (item function "PQ_Cmd_Status") " function.")))

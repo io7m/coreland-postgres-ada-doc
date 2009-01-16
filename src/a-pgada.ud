@@ -1,0 +1,11 @@
+(section
+  (ref "pgada")
+  (title "postgres-ada api reference")
+  (contents)
+
+  (include "a-pgada-database.ud")
+  (include "a-pgada-errors.ud")
+  (include "a-pgada-syntax.ud")
+  (include "a-pgada-thin.ud")
+  (include "a-pgada-utils.ud")
+)

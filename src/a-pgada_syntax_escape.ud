@@ -1,0 +1,18 @@
+(section
+  (ref "pgada_syntax_escape")
+  (title "PGAda.Syntax.Escape")
+  (para function_desc "Return sanitized string to pass to SQL.")
+  (subsection
+    (title "synopsis")
+    (para-verbatim function_synopsis
+"with PGAda.Syntax;
+
+function Escape (S : String) return String;
+"))
+  (subsection
+    (title "description")
+    (para
+      "The " (item function "Escape") " function returns a copy of "
+      (item function_param "S") " that has been modified to be safe
+      to pass directly to " (link "pgada_database_exec" "PGAda.Database.Exec")
+      ".")))

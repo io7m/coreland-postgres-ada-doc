@@ -1,0 +1,18 @@
+(section
+  (ref "pgada_database_result_error_field")
+  (title "PGAda.Database.Result_Error_Field")
+  (para function_desc "Return error field of result.")
+  (subsection
+    (title "synopsis")
+    (para-verbatim function_synopsis
+"with PGAda.Database;
+
+function Result_Error_Field
+  (Result : in PGAda.Database.Result_T;
+   Field  : in PGAda.Database.Error_Field) return string;
+"))
+  (subsection
+    (title "description")
+    (para
+      "The " (item function "Result_Error_Field") " function returns
+       the error field of " (item function "Result") ".")))

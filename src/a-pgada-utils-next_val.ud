@@ -1,0 +1,21 @@
+(section
+  (ref "pgada_utils_next_value")
+  (title "PGAda.utils.next_value")
+  (para function_desc "Return next value in sequence.")
+  (subsection
+    (title "synopsis")
+    (para-verbatim function_synopsis
+"with PGAda.utils;
+with PGAda.Database;
+
+function Next_Value
+  (DB            : in PGAda.Database.Connection_T'Class;
+   Sequence_Name : in String) return Integer;
+"))
+  (subsection
+    (title "description")
+    (para
+      "The " (item function "Next_Value") " function returns the next
+       value in the sequence " (item function_param "Sequence_Name") " in
+       the database referenced by " (item function_param "DB") ".")))
+

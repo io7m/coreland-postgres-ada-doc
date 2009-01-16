@@ -1,0 +1,21 @@
+(section
+  (ref "pgada_database_status")
+  (title "PGAda.Database.Status")
+  (para function_desc "Return connection status.")
+  (subsection
+    (title "synopsis")
+    (para-verbatim function_synopsis
+"with PGAda.Database;
+
+type Connection_Status_T is
+  (Connection_OK,
+   Connection_Bad);
+
+function Status (Connection : in PGAda.Database.Connection_T)
+  return PGAda.Database.Connection_Status_T;
+"))
+  (subsection
+    (title "description")
+    (para
+      "The " (item function "Status") " function returns the status
+      of the connection " (item function_param "Connection") ".")))

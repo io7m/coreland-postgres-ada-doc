@@ -1,0 +1,17 @@
+(section
+  (ref "pgada_thin_pq_get_value")
+  (title "PGAda.Thin.PQ_Get_Value")
+  (para function_desc "XXX: TODO.")
+  (subsection
+    (title "synopsis")
+    (para-verbatim function_synopsis
+"with PGAda.Thin;
+
+function PQ_Get_Value
+  (DB            : in PGAda.Database.Connection_T'Class;
+   Sequence_Name : in String) return Integer;
+"))
+  (subsection
+    (title "description")
+    (para
+      "The " (item function "PQ_Get_Value") " function.")))

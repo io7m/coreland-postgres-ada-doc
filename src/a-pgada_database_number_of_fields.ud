@@ -1,0 +1,17 @@
+(section
+  (ref "pgada_database_number_of_fields")
+  (title "PGAda.Database.Number_Of_Fields")
+  (para function_desc "Return number of fields in result.")
+  (subsection
+    (title "synopsis")
+    (para-verbatim function_synopsis
+"with PGAda.Database;
+
+function Number_Of_Fields (Result : in PGAda.Database.Result_T) return Natural;
+"))
+  (subsection
+    (title "description")
+    (para
+      "The " (item function "Number_Of_Fields") " function returns the
+      number of fields returned in the result "
+      (item function_param "Result") ".")))

@@ -1,0 +1,8 @@
+(section
+  (ref "pgada_syntax")
+  (title "PGAda.syntax api reference")
+  (contents)
+
+  (include "a-pgada_syntax_escape.ud")
+  (include "a-pgada_syntax_image.ud")
+)

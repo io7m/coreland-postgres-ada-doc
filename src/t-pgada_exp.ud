@@ -1,0 +1,48 @@
+(subsection
+  (title "standard use cases")
+  (para-verbatim example "
+# compile Ada source using the library
+$ pgada-conf compile cflags incdir
+-I/usr/local/include/coreland/postgres-ada 
+
+# link object files against the static library
+$ pgada-conf compile ldflags slibdir
+-L/usr/local/lib/coreland/postgres-ada-static -lpgada 
+
+# link object files against the dynamic library
+$ pgada-conf compile ldflags dlibdir
+-L/usr/local/lib/coreland/postgres-ada -lpgada 
+
+"))
+
+(subsection
+  (title "other use cases")
+  (para-verbatim example "
+$ pgada-conf version
+postgres-ada 0.1.0 
+
+$ pgada-conf incdir
+/usr/local/include/coreland/postgres-ada 
+
+$ pgada-conf dlibdir
+/usr/local/lib/coreland/postgres-ada 
+
+$ pgada-conf slibdir
+/usr/local/lib/coreland/postgres-ada-static 
+
+$ pgada-conf cflags
+
+
+$ pgada-conf ldflags
+-lpgada 
+
+$ pgada-conf compile incdir
+-I/usr/local/include/coreland/postgres-ada 
+
+$ pgada-conf compile dlibdir
+-L/usr/local/lib/coreland/postgres-ada 
+
+$ pgada-conf compile slibdir
+-L/usr/local/lib/coreland/postgres-ada-static 
+
+"))
