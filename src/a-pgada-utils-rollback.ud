@@ -1,11 +1,11 @@
 (section
   (ref "pgada_utils_rollback")
-  (title "PGAda.utils.rollback")
+  (title "PGAda.Utils.rollback")
   (para function_desc "Rollback database transaction.")
   (subsection
     (title "synopsis")
     (para-verbatim function_synopsis
-"with PGAda.utils;
+"with PGAda.Utils;
 with PGAda.Database;
 
 procedure Rollback

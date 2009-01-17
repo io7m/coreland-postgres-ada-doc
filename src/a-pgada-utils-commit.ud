@@ -1,11 +1,11 @@
 (section
   (ref "pgada_utils_commit")
-  (title "PGAda.utils.commit")
+  (title "PGAda.Utils.commit")
   (para function_desc "Commit database transaction.")
   (subsection
     (title "synopsis")
     (para-verbatim function_synopsis
-"with PGAda.utils;
+"with PGAda.Utils;
 with PGAda.Database;
 
 procedure Commit

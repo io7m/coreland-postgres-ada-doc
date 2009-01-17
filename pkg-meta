@@ -1,0 +1,34 @@
+
+#!/bin/sh
+
+info()
+{
+  echo "pkg-make: info: $1" 1>&2
+}
+
+fatal()
+{
+  echo "pkg-make: fatal: $1" 1>&2
+  exit 112
+}
+
+PKG_NAME=`./pkg-name src/m_pkg.txt` || fatal "could not read src/m_pkg.txt"
+
+info "mkdir release/meta"
+mkdir release/meta || fatal "could not create release/meta"
+
+info "copy src/m_docid.txt release/meta/id"
+cp src/m_docid.txt release/meta/id ||
+  die "could not copy src/m_docid.txt release/meta/id"
+
+info "copy src/m_title.txt release/meta/title"
+cp src/m_title.txt release/meta/title ||
+  die "could not copy src/m_title.txt release/meta/title"
+
+info "copy src/m_pkg.txt release/meta/package"
+cp src/m_pkg.txt release/meta/package ||
+  die "could not copy src/m_pkg.txt release/meta/package"
+
+info "create release/meta/pubdate"
+date -u "+%Y-%m-%d %H:%M:%S %z" > release/meta/pubdate ||
+  die "could not create release/meta/pubdate"

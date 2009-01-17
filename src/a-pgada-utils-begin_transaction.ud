@@ -1,11 +1,11 @@
 (section
   (ref "pgada_utils_begin_transaction")
-  (title "PGAda.utils.begin_transaction")
+  (title "PGAda.Utils.begin_transaction")
   (para function_desc "Begin database transaction.")
   (subsection
     (title "synopsis")
     (para-verbatim function_synopsis
-"with PGAda.utils;
+"with PGAda.Utils;
 with PGAda.Database;
 
 procedure Begin_Transaction
