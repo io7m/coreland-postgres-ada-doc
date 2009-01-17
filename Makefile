@@ -1,4 +1,4 @@
-all: html-split html-single css pdf dvi ps txt nroff
+all: html-split html-single css pdf dvi ps txt nroff local
 
 html-split: build/_html-split.done
 html-single: build/_html-single.done
@@ -9,6 +9,7 @@ ps: build/_ps.done
 txt: build/_txt.done
 nroff: build/_nroff.done
 meta: release/meta
+local: build/_local.done
 
 generated_sources = \
 src/m_docid.ud src/m_docid.txt \
@@ -89,8 +90,13 @@ $(generated_sources)
 	cp build/0.ps release/`./pkg-name src/m_pkg.txt`.ps
 	touch build/_ps.done
 
+build/_local.done:\
+local.sh
+	./local.sh
+
 release:
 	mkdir release
+
 build:
 	mkdir build
 
