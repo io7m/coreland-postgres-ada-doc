@@ -12,9 +12,9 @@ meta: release/meta
 local: build/_local.done
 
 generated_sources = \
-src/m_docid.ud src/m_docid.txt \
+src/m_docid.ud meta/id \
 src/m_pkg.ud   src/m_supp.ud \
-src/m_title.ud src/m_title.txt \
+src/m_title.ud meta/title_full \
 src/footer.html src/header.html \
 src/footer.txt src/header.txt \
 src/main.tex
@@ -22,45 +22,51 @@ src/main.tex
 #----------------------------------------------------------------------
 # meta
 
-src/m_docid.txt: src/m_docid.sh
-	(cd src && ./m_docid.sh > m_docid.txt.tmp && mv m_docid.txt.tmp m_docid.txt)
-src/m_docid.ud: src/m_docid_ud.sh src/m_docid.txt
-	(cd src && ./m_docid_ud.sh > m_docid.ud.tmp && mv m_docid.ud.tmp m_docid.ud)
-src/m_pkg.ud: src/m_pkg_ud.sh src/m_pkg.txt
-	(cd src && ./m_pkg_ud.sh > m_pkg.ud.tmp && mv m_pkg.ud.tmp m_pkg.ud)
-src/m_supp.ud: src/m_supp.sh
-	(cd src && ./m_supp.sh m_supp.txt > m_supp.ud.tmp && mv m_supp.ud.tmp m_supp.ud)
-src/m_title.txt: src/m_title.sh src/m_pkg.txt
-	(cd src && ./m_title.sh > m_title.txt.tmp && mv m_title.txt.tmp m_title.txt)
-src/m_title.ud: src/m_title_ud.sh src/m_title.txt
-	(cd src && ./m_title_ud.sh > m_title.ud.tmp && mv m_title.ud.tmp m_title.ud)
+meta/id: mk-docid meta/id_prefix
+	./mk-docid meta/id_prefix > meta/id.tmp && mv meta/id.tmp meta/id
+src/m_docid.ud: mk-ud-docid meta/id
+	./mk-ud-docid meta/id > src/m_docid.ud.tmp && mv src/m_docid.ud.tmp src/m_docid.ud
+src/m_pkg.ud: mk-ud-pkg meta/pkg
+	./mk-ud-pkg meta/pkg > src/m_pkg.ud.tmp && mv src/m_pkg.ud.tmp src/m_pkg.ud
+src/m_supp.ud: mk-ud-supp
+	./mk-ud-supp meta/supported > src/m_supp.ud.tmp && mv src/m_supp.ud.tmp src/m_supp.ud
+meta/title_full: mk-title meta/pkg meta/title
+	./mk-title meta/pkg meta/title > meta/title_full.tmp && mv meta/title_full.tmp meta/title_full
+src/m_title.ud: mk-ud-title meta/title_full
+	./mk-ud-title meta/title_full > src/m_title.ud.tmp && mv src/m_title.ud.tmp src/m_title.ud
 
 #----------------------------------------------------------------------
 # source generation
 
-src/footer.html: src/m_pkg.txt src/footer.html.sh
-	(cd src && ./footer.html.sh > footer.html.tmp && mv footer.html.tmp footer.html)
-src/header.html: src/m_pkg.txt src/header.html.sh
-	(cd src && ./header.html.sh > header.html.tmp && mv header.html.tmp header.html)
-src/footer.txt: src/m_pkg.txt src/footer.txt.sh
-	(cd src && ./footer.txt.sh > footer.txt.tmp && mv footer.txt.tmp footer.txt)
-src/header.txt: src/m_pkg.txt src/header.txt.sh
-	(cd src && ./header.txt.sh > header.txt.tmp && mv header.txt.tmp header.txt)
-src/main.tex: src/m_pkg.txt src/main.tex.sh
-	(cd src && ./main.tex.sh > main.tex.tmp && mv main.tex.tmp main.tex)
+src/footer.html: meta/title_full mk-html-footer
+	./mk-html-footer meta/title_full > src/footer.html.tmp && mv src/footer.html.tmp src/footer.html
+src/header.html: meta/title_full mk-html-header
+	./mk-html-header meta/title_full > src/header.html.tmp && mv src/header.html.tmp src/header.html
+src/footer.txt: meta/title_full mk-txt-footer
+	./mk-txt-footer meta/title_full > src/footer.txt.tmp && mv src/footer.txt.tmp src/footer.txt
+src/header.txt: meta/title_full mk-txt-header
+	./mk-txt-header meta/title_full > src/header.txt.tmp && mv src/header.txt.tmp src/header.txt
+src/main.tex: meta/title_full mk-tex-code
+	./mk-tex-code meta/title_full > src/main.tex.tmp && mv src/main.tex.tmp src/main.tex
 
 #----------------------------------------------------------------------
 # build targets
 
 build/_html-split.done:\
-src/m_docid.txt src/main.ud release build $(generated_sources)
-	(cd src && udoc-render -c 4 -s 3 -r xhtml main.ud ../build)
+meta/id src/main.ud release build $(generated_sources)
+	(cd src && udoc-render \
+		-c `head -n 1 ../conf/xh-toc` \
+		-s `head -n 1 ../conf/xh-split` \
+		-r xhtml main.ud ../build)
 	cp build/*.html release
 	touch build/_html-split.done
 
 build/_html-single.done:\
-src/m_docid.txt src/main.ud release build $(generated_sources)
-	(cd src && udoc-render -c 4 -s 0 -r xhtml main.ud ../build)
+meta/id src/main.ud release build $(generated_sources)
+	(cd src && udoc-render \
+		-c `head -n 1 ../conf/xh-toc` \
+		-s 0 \
+		-r xhtml main.ud ../build)
 	cp build/0.html release/single.html
 	touch build/_html-single.done
 
@@ -70,42 +76,44 @@ build/_css.done: src/main.css
 	touch build/_css.done
 
 build/_txt.done:\
-src/m_docid.txt src/m_pkg.txt src/main.ud pkg-name release build \
+meta/id meta/pkg src/main.ud pkg-name release build \
 $(generated_sources)
 	(cd src && udoc-render -r plain main.ud ../build)
-	cp build/0.txt release/`./pkg-name src/m_pkg.txt`.txt
+	cp build/0.txt release/`./pkg-name meta/pkg`.txt
 	touch build/_txt.done
 
 build/_nroff.done:\
-src/m_docid.txt src/m_pkg.txt src/main.ud pkg-name release build \
+meta/id meta/pkg src/main.ud pkg-name release build \
 $(generated_sources)
 	(cd src && udoc-render -r nroff main.ud ../build)
-	cp build/0.nrf release/`./pkg-name src/m_pkg.txt`.nrf
+	cp build/0.nrf release/`./pkg-name meta/pkg`.nrf
 	touch build/_nroff.done
 
 build/0.tex:\
-src/m_docid.txt src/m_pkg.txt src/main.ud release build $(generated_sources)
-	(cd src && udoc-render -s 3 -r context main.ud ../build)
+meta/id meta/pkg src/main.ud release build conf/ctex-split $(generated_sources)
+	(cd src && udoc-render \
+		-s `head -n 1 ../conf/ctex-split` \
+		-r context main.ud ../build)
 
 build/_dvi.done:\
-src/m_docid.txt src/m_pkg.txt src/main.ud build/0.tex pkg-name release build \
+meta/id meta/pkg src/main.ud build/0.tex pkg-name release build \
 $(generated_sources)
 	(cd build && texexec --dvi 0.tex)
-	cp build/0.dvi release/`./pkg-name src/m_pkg.txt`.dvi
+	cp build/0.dvi release/`./pkg-name meta/pkg`.dvi
 	touch build/_dvi.done
 
 build/_pdf.done:\
-src/m_docid.txt src/m_pkg.txt src/main.ud build/0.tex pkg-name release build \
+meta/id meta/pkg src/main.ud build/0.tex pkg-name release build \
 $(generated_sources)
 	(cd build && texexec --pdf 0.tex)
-	cp build/0.pdf release/`./pkg-name src/m_pkg.txt`.pdf
+	cp build/0.pdf release/`./pkg-name meta/pkg`.pdf
 	touch build/_pdf.done
 
 build/_ps.done:\
-src/m_docid.txt src/m_pkg.txt src/main.ud build/0.pdf pkg-name release build \
+meta/id meta/pkg src/main.ud build/0.pdf pkg-name release build \
 $(generated_sources)
 	(cd build && pdf2ps 0.pdf)
-	cp build/0.ps release/`./pkg-name src/m_pkg.txt`.ps
+	cp build/0.ps release/`./pkg-name meta/pkg`.ps
 	touch build/_ps.done
 
 build/_local.done:\
@@ -118,10 +126,10 @@ release:
 build:
 	mkdir build
 
-release/meta: src/m_docid.txt src/m_title.txt src/m_pkg.txt pkg-meta pkg-name
+release/meta: meta/id meta/title_full meta/pkg pkg-meta pkg-name
 	./pkg-meta
 
-package: meta pkg-make pkg-name src/m_pkg.txt
+package: meta pkg-make pkg-name meta/pkg
 	./pkg-make
 
 #----------------------------------------------------------------------

@@ -11,7 +11,7 @@ fatal()
   exit 112
 }
 
-PKG_NAME=`./pkg-name src/m_pkg.txt` || fatal "could not read src/m_pkg.txt"
+PKG_NAME=`./pkg-name meta/pkg` || fatal "could not read meta/pkg"
 
 info "copy LICENSE release"
 cp LICENSE release || fatal "could not copy LICENSE"

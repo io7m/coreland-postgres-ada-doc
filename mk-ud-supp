@@ -2,7 +2,7 @@
 
 if [ $# -ne 1 ]
 then
-  echo "usage: data" 1>&2
+  echo "mk-ud-supp: usage: data" 1>&2
   exit 111
 fi
 
