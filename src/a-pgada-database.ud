@@ -12,6 +12,7 @@
 
   (include "a-pgada_database_clear.ud")
   (include "a-pgada_database_command_status.ud")
+  (include "a-pgada_database_command_tuples.ud")
   (include "a-pgada_database_db.ud")
   (include "a-pgada_database_error_code.ud")
   (include "a-pgada_database_error_message.ud")
