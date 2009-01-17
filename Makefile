@@ -14,7 +14,10 @@ local: build/_local.done
 generated_sources = \
 src/m_docid.ud src/m_docid.txt \
 src/m_pkg.ud   src/m_supp.ud \
-src/m_title.ud src/m_title.txt
+src/m_title.ud src/m_title.txt \
+src/footer.html src/header.html \
+src/footer.txt src/header.txt \
+src/main.tex
 
 #----------------------------------------------------------------------
 # meta
@@ -33,6 +36,21 @@ src/m_title.ud: src/m_title_ud.sh src/m_title.txt
 	(cd src && ./m_title_ud.sh > m_title.ud.tmp && mv m_title.ud.tmp m_title.ud)
 
 #----------------------------------------------------------------------
+# source generation
+
+src/footer.html: src/m_pkg.txt src/footer.html.sh
+	(cd src && ./footer.html.sh > footer.html.tmp && mv footer.html.tmp footer.html)
+src/header.html: src/m_pkg.txt src/header.html.sh
+	(cd src && ./header.html.sh > header.html.tmp && mv header.html.tmp header.html)
+src/footer.txt: src/m_pkg.txt src/footer.txt.sh
+	(cd src && ./footer.txt.sh > footer.txt.tmp && mv footer.txt.tmp footer.txt)
+src/header.txt: src/m_pkg.txt src/header.txt.sh
+	(cd src && ./header.txt.sh > header.txt.tmp && mv header.txt.tmp header.txt)
+src/main.tex: src/m_pkg.txt src/main.tex.sh
+	(cd src && ./main.tex.sh > main.tex.tmp && mv main.tex.tmp main.tex)
+
+#----------------------------------------------------------------------
+# build targets
 
 build/_html-split.done:\
 src/m_docid.txt src/main.ud release build $(generated_sources)
