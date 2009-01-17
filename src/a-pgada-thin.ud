@@ -9,6 +9,7 @@
 
   (include "a-pgada_thin_pq_clear.ud")
   (include "a-pgada_thin_pq_cmd_status.ud")
+  (include "a-pgada_thin_pq_cmd_tuples.ud")
   (include "a-pgada_thin_pq_db.ud")
   (include "a-pgada_thin_pq_error_message.ud")
   (include "a-pgada_thin_pq_exec.ud")
