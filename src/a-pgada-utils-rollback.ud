@@ -1,6 +1,6 @@
 (section
   (ref "pgada_utils_rollback")
-  (title "PGAda.Utils.rollback")
+  (title "PGAda.Utils.Rollback")
   (para function_desc "Rollback database transaction.")
   (subsection
     (title "synopsis")

@@ -3,12 +3,12 @@
 
 info()
 {
-  echo "pkg-make: info: $1" 1>&2
+  echo "pkg-meta: info: $1" 1>&2
 }
 
 fatal()
 {
-  echo "pkg-make: fatal: $1" 1>&2
+  echo "pkg-meta: fatal: $1" 1>&2
   exit 112
 }
 

@@ -1,6 +1,6 @@
 (section
   (ref "pgada_utils_commit")
-  (title "PGAda.Utils.commit")
+  (title "PGAda.Utils.Commit")
   (para function_desc "Commit database transaction.")
   (subsection
     (title "synopsis")

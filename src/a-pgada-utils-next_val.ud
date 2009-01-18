@@ -1,6 +1,6 @@
 (section
   (ref "pgada_utils_next_value")
-  (title "PGAda.Utils.next_value")
+  (title "PGAda.Utils.Next_Value")
   (para function_desc "Return next value in sequence.")
   (subsection
     (title "synopsis")

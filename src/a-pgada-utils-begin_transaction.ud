@@ -1,6 +1,6 @@
 (section
-  (ref "pgada_utils_begin_transaction")
-  (title "PGAda.Utils.begin_transaction")
+  (ref "pgada_utils_Begin_Transaction")
+  (title "PGAda.Utils.Begin_Transaction")
   (para function_desc "Begin database transaction.")
   (subsection
     (title "synopsis")
