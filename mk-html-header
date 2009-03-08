@@ -1,15 +1,16 @@
 #!/bin/sh
 
-if [ $# -ne 1 ]
+if [ $# -ne 2 ]
 then
-  echo "mk-html-header: usage: file" 1>&2
+  echo "mk-html-header: usage: site-file title-file" 1>&2
   exit 111
 fi
 
-title=`head -n 1 "$1"` || exit 1
+site=`head -n 1 "$1"` || exit 1
+title=`head -n 1 "$2"` || exit 1
 cat <<EOF
 <div class="core_header">
-  <a href="/">coreland</a> / <a href="/doc">doc</a> - ${title}
+  <a href="/">${site}</a> / <a href="/doc">doc</a> - ${title}
   <hr />
 </div>
 EOF

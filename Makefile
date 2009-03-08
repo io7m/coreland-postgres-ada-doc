@@ -38,14 +38,14 @@ src/m_title.ud: mk-ud-title meta/title_full
 #----------------------------------------------------------------------
 # source generation
 
-src/footer.html: meta/title_full mk-html-footer
-	./mk-html-footer meta/title_full > src/footer.html.tmp && mv src/footer.html.tmp src/footer.html
-src/header.html: meta/title_full mk-html-header
-	./mk-html-header meta/title_full > src/header.html.tmp && mv src/header.html.tmp src/header.html
-src/footer.txt: meta/title_full mk-txt-footer
-	./mk-txt-footer meta/title_full > src/footer.txt.tmp && mv src/footer.txt.tmp src/footer.txt
-src/header.txt: meta/title_full mk-txt-header
-	./mk-txt-header meta/title_full > src/header.txt.tmp && mv src/header.txt.tmp src/header.txt
+src/footer.html: meta/site meta/title_full mk-html-footer
+	./mk-html-footer meta/site meta/title_full > src/footer.html.tmp && mv src/footer.html.tmp src/footer.html
+src/header.html: meta/site meta/title_full mk-html-header
+	./mk-html-header meta/site meta/title_full > src/header.html.tmp && mv src/header.html.tmp src/header.html
+src/footer.txt: meta/site meta/title_full mk-txt-footer
+	./mk-txt-footer meta/site meta/title_full > src/footer.txt.tmp && mv src/footer.txt.tmp src/footer.txt
+src/header.txt: meta/site meta/title_full mk-txt-header
+	./mk-txt-header meta/site meta/title_full > src/header.txt.tmp && mv src/header.txt.tmp src/header.txt
 src/main.tex: meta/title_full mk-tex-code
 	./mk-tex-code meta/title_full > src/main.tex.tmp && mv src/main.tex.tmp src/main.tex
 
@@ -53,7 +53,7 @@ src/main.tex: meta/title_full mk-tex-code
 # build targets
 
 build/_html-split.done:\
-meta/id src/main.ud release build $(generated_sources)
+meta/id src/main.ud release build build/_local.done $(generated_sources)
 	(cd src && udoc-render \
 		-c `head -n 1 ../conf/xh-toc` \
 		-s `head -n 1 ../conf/xh-split` \
@@ -62,7 +62,7 @@ meta/id src/main.ud release build $(generated_sources)
 	touch build/_html-split.done
 
 build/_html-single.done:\
-meta/id src/main.ud release build $(generated_sources)
+meta/id src/main.ud release build build/_local.done $(generated_sources)
 	(cd src && udoc-render \
 		-c `head -n 1 ../conf/xh-toc` \
 		-s 0 \
@@ -76,42 +76,43 @@ build/_css.done: src/main.css
 	touch build/_css.done
 
 build/_txt.done:\
-meta/id meta/pkg src/main.ud pkg-name release build \
+meta/id meta/pkg src/main.ud pkg-name release build build/_local.done \
 $(generated_sources)
 	(cd src && udoc-render -r plain main.ud ../build)
 	cp build/0.txt release/`./pkg-name meta/pkg`.txt
 	touch build/_txt.done
 
 build/_nroff.done:\
-meta/id meta/pkg src/main.ud pkg-name release build \
+meta/id meta/pkg src/main.ud pkg-name release build build/_local.done \
 $(generated_sources)
 	(cd src && udoc-render -r nroff main.ud ../build)
 	cp build/0.nrf release/`./pkg-name meta/pkg`.nrf
 	touch build/_nroff.done
 
 build/0.tex:\
-meta/id meta/pkg src/main.ud release build conf/ctex-split $(generated_sources)
+meta/id meta/pkg src/main.ud release build build/_local.done conf/ctex-split \
+$(generated_sources)
 	(cd src && udoc-render \
 		-s `head -n 1 ../conf/ctex-split` \
 		-r context main.ud ../build)
 
 build/_dvi.done:\
 meta/id meta/pkg src/main.ud build/0.tex pkg-name release build \
-$(generated_sources)
+build/_local.done $(generated_sources)
 	(cd build && texexec --dvi 0.tex)
 	cp build/0.dvi release/`./pkg-name meta/pkg`.dvi
 	touch build/_dvi.done
 
 build/_pdf.done:\
 meta/id meta/pkg src/main.ud build/0.tex pkg-name release build \
-$(generated_sources)
+build/_local.done $(generated_sources)
 	(cd build && texexec --pdf 0.tex)
 	cp build/0.pdf release/`./pkg-name meta/pkg`.pdf
 	touch build/_pdf.done
 
 build/_ps.done:\
 meta/id meta/pkg src/main.ud build/0.pdf pkg-name release build \
-$(generated_sources)
+build/_local.done $(generated_sources)
 	(cd build && pdf2ps 0.pdf)
 	cp build/0.ps release/`./pkg-name meta/pkg`.ps
 	touch build/_ps.done
