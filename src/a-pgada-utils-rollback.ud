@@ -3,7 +3,7 @@
   (title "PGAda.Utils.Rollback")
   (para function_desc "Rollback database transaction.")
   (subsection
-    (title "synopsis")
+    (title "Synopsis")
     (para-verbatim function_synopsis
 "with PGAda.Utils;
 with PGAda.Database;
@@ -12,10 +12,10 @@ procedure Rollback
   (DB : in PGAda.Database.Connection_T'Class);
 "))
   (subsection
-    (title "description")
+    (title "Description")
     (para
-      "The " (item function "Rollback") " procedure cancels the execution
+      "The " (item ada_procedure "Rollback") " procedure cancels the execution
        of the current transaction in the database referenced by "
-      (item function_param "DB") ". It
+      (item parameter "DB") ". It
        is functionally equivalent to executing the following SQL statement:")
     (para-verbatim example "ROLLBACK;")))

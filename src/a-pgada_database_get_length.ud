@@ -3,7 +3,7 @@
   (title "PGAda.Database.Get_Length")
   (para function_desc "Returns the actual length of a field value in bytes.")
   (subsection
-    (title "synopsis")
+    (title "Synopsis")
     (para-verbatim function_synopsis
 "with PGAda.Database;
 
@@ -13,9 +13,9 @@ function Get_Length
   Field_Index : in Positive) return Natural;
 "))
   (subsection
-    (title "description")
+    (title "Description")
     (para
-      "The " (item function "Get_Length") " function returns the length
-      of the field in bytes at row " (item function_param "Tuple_Index")
-      " at column " (item function_param "Field_Index") " in the result "
-      (item function_param "Result") ".")))
+      "The " (item ada_function "Get_Length") " function returns the length
+      of the field in bytes at row " (item parameter "Tuple_Index")
+      " at column " (item parameter "Field_Index") " in the result "
+      (item parameter "Result") ".")))

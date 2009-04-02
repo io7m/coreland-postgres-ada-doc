@@ -3,17 +3,17 @@
   (title "pgada-conf")
 
   (section
-    (title "synopsis")
+    (title "Synopsis")
     (para-verbatim
 "pgada-conf: [help] ops ..."))
 
   (section
-    (title "description")
+    (title "Description")
     (para "The " (item command "pgada-conf") " program prints information
      needed to compile and/or link against the library itself."))
 
   (section
-    (title "options")
+    (title "Options")
     (para "The following options are available:")
     (para
       (table options
@@ -47,7 +47,7 @@
           (item "Append newline to output.")))))
 
   (section
-    (title "example")
+    (title "Example")
     (ref "conf_example")
     (include "t-pgada_exp.ud"))
 )

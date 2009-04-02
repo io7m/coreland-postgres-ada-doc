@@ -3,7 +3,7 @@
   (title "PGAda.Database.Exec")
   (para function_desc "Execute SQL statements.")
   (subsection
-    (title "synopsis")
+    (title "Synopsis")
     (para-verbatim function_synopsis
 "with PGAda.Database;
 
@@ -29,13 +29,13 @@ procedure Exec
   Result     : out PGAda.Database.Result_T);
 "))
   (subsection
-    (title "description")
+    (title "Description")
     (para
-      "The " (item function "Exec") " procedures execute the
-      SQL code in " (item function_param "Query") " using the
-      database connection " (item function_param "Connection")
-      ", returning the result in " (item function_param "Result")
+      "The " (item ada_procedure "Exec") " procedures execute the
+      SQL code in " (item parameter "Query") " using the
+      database connection " (item parameter "Connection")
+      ", returning the result in " (item parameter "Result")
       ".")
     (para
       "The second procedure form returns the execution status
-      in " (item function_param "Status") ".")))
+      in " (item parameter "Status") ".")))

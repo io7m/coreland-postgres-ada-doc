@@ -3,7 +3,7 @@
   (title "PGAda.Database.Result_Error_Field")
   (para function_desc "Return error field of result.")
   (subsection
-    (title "synopsis")
+    (title "Synopsis")
     (para-verbatim function_synopsis
 "with PGAda.Database;
 
@@ -12,7 +12,7 @@ function Result_Error_Field
    Field  : in PGAda.Database.Error_Field) return string;
 "))
   (subsection
-    (title "description")
+    (title "Description")
     (para
-      "The " (item function "Result_Error_Field") " function returns
+      "The " (item ada_function "Result_Error_Field") " function returns
        the error field of " (item function "Result") ".")))

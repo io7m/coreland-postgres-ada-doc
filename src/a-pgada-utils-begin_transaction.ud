@@ -3,7 +3,7 @@
   (title "PGAda.Utils.Begin_Transaction")
   (para function_desc "Begin database transaction.")
   (subsection
-    (title "synopsis")
+    (title "Synopsis")
     (para-verbatim function_synopsis
 "with PGAda.Utils;
 with PGAda.Database;
@@ -13,9 +13,9 @@ procedure Begin_Transaction
 
 "))
   (subsection
-    (title "description")
+    (title "Description")
     (para
-      "The " (item function "Begin_Transaction") " procedure begins a transaction
-       in the database referenced by " (item function_param "DB") ". It
+      "The " (item ada_procedure "Begin_Transaction") " procedure begins a transaction
+       in the database referenced by " (item parameter "DB") ". It
        is functionally equivalent to executing the following SQL statement:")
     (para-verbatim example "BEGIN;")))

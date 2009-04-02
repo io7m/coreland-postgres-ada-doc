@@ -3,7 +3,7 @@
   (title "PGAda.Thin.PQ_N_Tuples")
   (para function_desc "XXX: TODO.")
   (subsection
-    (title "synopsis")
+    (title "Synopsis")
     (para-verbatim function_synopsis
 "with PGAda.Thin;
 
@@ -12,6 +12,6 @@ function PQ_N_Tuples
    Sequence_Name : in String) return Integer;
 "))
   (subsection
-    (title "description")
+    (title "Description")
     (para
-      "The " (item function "PQ_N_Tuples") " function.")))
+      "The " (item ada_function "PQ_N_Tuples") " function.")))

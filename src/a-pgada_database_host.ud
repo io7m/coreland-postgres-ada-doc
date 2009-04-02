@@ -3,14 +3,14 @@
   (title "PGAda.Database.Host")
   (para function_desc "Return hostname of a connection.")
   (subsection
-    (title "synopsis")
+    (title "Synopsis")
     (para-verbatim function_synopsis
 "with PGAda.Database;
 
 function Host (Connection : in PGAda.Database.Connection_T) return String;
 "))
   (subsection
-    (title "description")
+    (title "Description")
     (para
-      "The " (item function "Host") " function returns the name of the
-      host associated with " (item function_param "Connection") ".")))
+      "The " (item ada_function "Host") " function returns the name of the
+      host associated with " (item parameter "Connection") ".")))

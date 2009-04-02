@@ -1,6 +1,6 @@
 (section
   (ref "pgada_errors")
-  (title "PGAda.errors api reference")
+  (title "PGAda.Errors API Reference")
   (contents)
 
   (include "a-pgada_errors_error_value.ud")

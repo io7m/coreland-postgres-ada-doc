@@ -3,14 +3,14 @@
   (title "PGAda.Database.Finish")
   (para function_desc "Closes the connection to the server.")
   (subsection
-    (title "synopsis")
+    (title "Synopsis")
     (para-verbatim function_synopsis
 "with PGAda.Database;
 
 procedure Finish (Connection : in out PGAda.Database.Connection_T);
 "))
   (subsection
-    (title "description")
+    (title "Description")
     (para
-      "The " (item function "Finish") " function closes the connection
+      "The " (item ada_procedure "Finish") " procedure closes the connection
        to the database server and frees any storage used.")))

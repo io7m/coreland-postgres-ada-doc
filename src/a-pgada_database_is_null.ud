@@ -3,7 +3,7 @@
   (title "PGAda.Database.Is_Null")
   (para function_desc "Check if value is null.")
   (subsection
-    (title "synopsis")
+    (title "Synopsis")
     (para-verbatim function_synopsis
 "with PGAda.Database;
 
@@ -13,8 +13,8 @@ function Is_Null
   Field_Index : in Positive) return Boolean;
 "))
   (subsection
-    (title "description")
+    (title "Description")
     (para
-      "The " (item function "Is_Null") " function returns true
-      if the value at row " (item function_param "Tuple_Index")
-      ", column " (item function_param "Field_Index") " is null.")))
+      "The " (item ada_function "Is_Null") " function returns true
+      if the value at row " (item parameter "Tuple_Index")
+      ", column " (item parameter "Field_Index") " is null.")))

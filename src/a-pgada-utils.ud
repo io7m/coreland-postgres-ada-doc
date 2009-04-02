@@ -1,6 +1,6 @@
 (section
   (ref "pgada_utils")
-  (title "PGAda.Utils api reference")
+  (title "PGAda.Utils API Reference")
   (contents)
 
   (include "a-pgada-utils-next_val.ud")

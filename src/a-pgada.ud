@@ -1,6 +1,6 @@
 (section
   (ref "pgada")
-  (title "postgres-ada api reference")
+  (title "postgres-ada API Reference")
   (contents)
 
   (include "a-pgada-database.ud")

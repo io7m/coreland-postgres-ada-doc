@@ -3,14 +3,14 @@
   (title "PGAda.Database.DB")
   (para function_desc "Return database name of a connection.")
   (subsection
-    (title "synopsis")
+    (title "Synopsis")
     (para-verbatim function_synopsis
 "with PGAda.Database;
 
 function DB (Connection : in PGAda.Database.Connection_T) return String;
 "))
   (subsection
-    (title "description")
+    (title "Description")
     (para
-      "The " (item function "DB") " function returns the name of the
-      database associated with " (item function_param "Connection") ".")))
+      "The " (item ada_function "DB") " function returns the name of the
+      database associated with " (item parameter "Connection") ".")))

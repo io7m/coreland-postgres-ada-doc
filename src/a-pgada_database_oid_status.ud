@@ -3,14 +3,14 @@
   (title "PGAda.Database.OID_Status")
   (para function_desc "Return OID status of result.")
   (subsection
-    (title "synopsis")
+    (title "Synopsis")
     (para-verbatim function_synopsis
 "with PGAda.Database;
 
 function OID_Status (Result : in PGAda.Database.Result_T) return String;
 "))
   (subsection
-    (title "description")
+    (title "Description")
     (para
-      "The " (item function "OID_Status") " function returns the
-      OID status of the result " (item function_param "Result") ".")))
+      "The " (item ada_function "OID_Status") " function returns the
+      OID status of the result " (item parameter "Result") ".")))

@@ -3,7 +3,7 @@
   (title "PGAda.Database.Set_DB_Login")
   (para function_desc "Connect to database.")
   (subsection
-    (title "synopsis")
+    (title "Synopsis")
     (para-verbatim function_synopsis
 "with PGAda.Database;
 
@@ -14,15 +14,15 @@ procedure Set_DB_Login
   Options    : in String  := "";
   TTY        : in String  := "";
   DB_Name    : in String  := "";
-  Login      : in String := "";
-  Password   : in String := "");
+  Login      : in String  := "";
+  Password   : in String  := "");
 "))
   (subsection
-    (title "description")
+    (title "Description")
     (para
-      "The " (item function "Set_DB_Login") " procedure connects to
-      the database at " (item function_param "Host") ", passing the
+      "The " (item ada_procedure "Set_DB_Login") " procedure connects to
+      the database at " (item parameter "Host") ", passing the
       rest of the parameters as credentials.")
     (para
-      "The procedure raises " (item ada_exception "PGError")
+      "The procedure raises " (item ada_exception "PG_Error")
       " on error (allocation, connection or otherwise).")))

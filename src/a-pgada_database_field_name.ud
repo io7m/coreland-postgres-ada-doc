@@ -3,7 +3,7 @@
   (title "PGAda.Database.Field_Name")
   (para function_desc "Return name of field.")
   (subsection
-    (title "synopsis")
+    (title "Synopsis")
     (para-verbatim function_synopsis
 "with PGAda.Database;
 
@@ -12,8 +12,8 @@ function Field_Name
   Field_Index : in Positive) return String;
 "))
   (subsection
-    (title "description")
+    (title "Description")
     (para
-      "The " (item function "Field_Name") " function returns the name
-      of the field in " (item function_param "Result") " at index "
-      (item function_param "Field_Index") ".")))
+      "The " (item ada_function "Field_Name") " function returns the name
+      of the field in " (item parameter "Result") " at index "
+      (item parameter "Field_Index") ".")))

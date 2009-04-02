@@ -3,7 +3,7 @@
   (title "PGAda.Database.Result_Status")
   (para function_desc "Return result status of command.")
   (subsection
-    (title "synopsis")
+    (title "Synopsis")
     (para-verbatim function_synopsis
 "with PGAda.Database;
 
@@ -11,8 +11,8 @@ function Result_Status (Result : in PGAda.Database.Result_T)
   return PGAda.Database.Exec_Status_T;
 "))
   (subsection
-    (title "description")
+    (title "Description")
     (para
-      "The " (item function "Result_Status") " function returns
-       the execution status associated with " (item function_param "Result")
+      "The " (item ada_function "Result_Status") " function returns
+       the execution status associated with " (item parameter "Result")
       ".")))

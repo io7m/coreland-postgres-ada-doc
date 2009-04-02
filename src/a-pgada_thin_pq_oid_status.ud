@@ -3,7 +3,7 @@
   (title "PGAda.Thin.PQ_Oid_Status")
   (para function_desc "XXX: TODO.")
   (subsection
-    (title "synopsis")
+    (title "Synopsis")
     (para-verbatim function_synopsis
 "with PGAda.Thin;
 
@@ -11,6 +11,6 @@ function PQ_Oid_Status (Res : PG_Result_Access_T)
   return Interfaces.C.Strings.chars_ptr;
 "))
   (subsection
-    (title "description")
+    (title "Description")
     (para
-      "The " (item function "PQ_Oid_Status") " function.")))
+      "The " (item ada_function "PQ_Oid_Status") " function.")))

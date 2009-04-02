@@ -3,14 +3,14 @@
   (title "PGAda.Database.Clear")
   (para function_desc "Free result storage.")
   (subsection
-    (title "synopsis")
+    (title "Synopsis")
     (para-verbatim function_synopsis
 "with PGAda.Database;
 
 procedure Clear (Result : in out PGAda.Database.Result_T);
 "))
   (subsection
-    (title "description")
+    (title "Description")
     (para
-      "The " (item function "Clear") " function frees the storage associated
-      with " (item function_param "Result") ".")))
+      "The " (item ada_procedure "Clear") " procedure frees the storage associated
+      with " (item parameter "Result") ".")))

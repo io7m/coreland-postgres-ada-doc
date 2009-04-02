@@ -3,16 +3,23 @@
   (title "PGAda.Syntax.Escape")
   (para function_desc "Return sanitized string to pass to SQL.")
   (subsection
-    (title "synopsis")
+    (title "Synopsis")
     (para-verbatim function_synopsis
 "with PGAda.Syntax;
 
 function Escape (S : String) return String;
 "))
   (subsection
-    (title "description")
+    (title "Description")
     (para
-      "The " (item function "Escape") " function returns a copy of "
-      (item function_param "S") " that has been modified to be safe
+      "The " (item ada_function "Escape") " function returns a copy of "
+      (item parameter "S") " that has been modified to be safe
       to pass directly to " (link "pgada_database_exec" "PGAda.Database.Exec")
-      ".")))
+      ".")
+    (para
+      "The function replaces all single quote characters in the string with
+       a pair of single quotes and then surrounds the entire string with
+       additional single quotes. Previous versions of this function used
+       backslashes but this is non-standard SQL and the "
+        (link-ext "http://www.postgresql.org/docs/8.3/static/sql-syntax-lexical.html#SQL-SYNTAX-STRINGS"
+          "PostgreSQL documentation") " notes that this is essentially deprecated.")))

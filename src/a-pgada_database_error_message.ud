@@ -3,15 +3,15 @@
   (title "PGAda.Database.Error_Message")
   (para function_desc "Return connection error message.")
   (subsection
-    (title "synopsis")
+    (title "Synopsis")
     (para-verbatim function_synopsis
 "with PGAda.Database;
 
 function Error_Message (Connection : in PGAda.Database.Connection_T) return String;
 "))
   (subsection
-    (title "description")
+    (title "Description")
     (para
-      "The " (item function "Error_Message") " function returns
+      "The " (item ada_function "Error_Message") " function returns
        the error message associated with "
-      (item function_param "Connection") ".")))
+      (item parameter "Connection") ".")))

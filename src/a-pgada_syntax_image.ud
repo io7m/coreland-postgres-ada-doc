@@ -3,17 +3,17 @@
   (title "PGAda.Syntax.Image")
   (para function_desc "Return sanitized string to pass to SQL.")
   (subsection
-    (title "synopsis")
+    (title "Synopsis")
     (para-verbatim function_synopsis
 "with PGAda.Syntax;
 
 function Image (I : Integer) return String;
 "))
   (subsection
-    (title "description")
+    (title "Description")
     (para
-      "The " (item function "Image") " function is equivalent to: ")
+      "The " (item ada_function "Image") " function is equivalent to: ")
     (para-verbatim example
 "Ada.Strings.Fixed.Trim (Integer'Image (I), Ada.Strings.Left);")
     (para "In other words, it removes any possible leading space
-      returned by the 'Image attribute.")))
+      returned by the '" (item ada_attribute "Image") " attribute.")))

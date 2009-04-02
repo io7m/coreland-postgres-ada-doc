@@ -3,7 +3,7 @@
   (title "PGAda.Utils.Commit")
   (para function_desc "Commit database transaction.")
   (subsection
-    (title "synopsis")
+    (title "Synopsis")
     (para-verbatim function_synopsis
 "with PGAda.Utils;
 with PGAda.Database;
@@ -12,10 +12,10 @@ procedure Commit
   (DB : in PGAda.Database.Connection_T'Class);
 "))
   (subsection
-    (title "description")
+    (title "Description")
     (para
-      "The " (item function "Commit") " procedure commits
+      "The " (item ada_procedure "Commit") " procedure commits
        the current transaction in the database referenced by "
-      (item function_param "DB") ". It
+      (item parameter "DB") ". It
        is functionally equivalent to executing the following SQL statement:")
     (para-verbatim example "COMMIT;")))

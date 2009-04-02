@@ -3,15 +3,15 @@
   (title "PGAda.Database.Options")
   (para function_desc "Return options used for database connection.")
   (subsection
-    (title "synopsis")
+    (title "Synopsis")
     (para-verbatim function_synopsis
 "with PGAda.Database;
 
 function Options (Connection : Connection_T) return String;
 "))
   (subsection
-    (title "description")
+    (title "Description")
     (para
-      "The " (item function "Options") " function returns the
+      "The " (item ada_function "Options") " function returns the
       option string used for the database connection "
-      (item function_param "Connection") ".")))
+      (item parameter "Connection") ".")))

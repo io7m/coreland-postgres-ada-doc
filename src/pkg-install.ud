@@ -1,10 +1,10 @@
 (section
-  (title "install")
+  (title "Install")
 
   ; usage section
 
   (subsection
-    (title "usage")
+    (title "Usage")
     (para
       "On installation, binaries, source files, libraries and
        headers are installed into various locations. The locations
@@ -40,7 +40,7 @@
   ; compilation requirements
 
   (subsection
-    (title "requirements")
+    (title "Requirements")
 
     (para "The package requires an Ada 2005" (footnote
       (link-ext "http://adaic.org/standards/05rm/html/RM-TTL.html"))
@@ -55,7 +55,7 @@
   ; compilation instructions
 
   (subsection
-    (title "compilation")
+    (title "Compilation")
     (para "The package is compiled with the following commands: ")
 
     (para-verbatim example

@@ -1,5 +1,5 @@
 (section
-  (title "license")
+  (title "License")
 
   (para
     (item package "postgres-ada") " is placed into the public domain, for

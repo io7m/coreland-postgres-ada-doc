@@ -3,7 +3,7 @@
   (title "PGAda.Database.Get_Value")
   (para function_desc "Return a single field value of one row of a result.")
   (subsection
-    (title "synopsis")
+    (title "Synopsis")
     (para-verbatim function_synopsis
 "with PGAda.Database;
 
@@ -13,9 +13,9 @@ function Get_Value
   Field_Index : in Positive) return Natural;
 "))
   (subsection
-    (title "description")
+    (title "Description")
     (para
-      "The " (item function "Get_Value") " function returns the value
-      of the field at row " (item function_param "Tuple_Index")
-      " at column " (item function_param "Field_Index") " in the result "
-      (item function_param "Result") ".")))
+      "The " (item ada_function "Get_Value") " function returns the value
+      of the field at row " (item parameter "Tuple_Index")
+      " at column " (item parameter "Field_Index") " in the result "
+      (item parameter "Result") ".")))

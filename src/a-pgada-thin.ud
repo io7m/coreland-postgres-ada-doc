@@ -1,6 +1,6 @@
 (section
   (ref "pgada_thin")
-  (title "PGAda.Thin api reference")
+  (title "PGAda.Thin API Reference")
 
   (para "The " (item ada_package "PGAda.Thin") " package contains prototypes
     to call C functions in " (item package "libpq") " directly.")

@@ -3,15 +3,15 @@
   (title "PGAda.Database.Command_Status")
   (para function_desc "Return command status from result.")
   (subsection
-    (title "synopsis")
+    (title "Synopsis")
     (para-verbatim function_synopsis
 "with PGAda.Database;
 
 function Command_Status (Result : in PGAda.Database.Result_T) return String;
 "))
   (subsection
-    (title "description")
+    (title "Description")
     (para
-      "The " (item function "Command_Status") " function returns the command
+      "The " (item ada_function "Command_Status") " function returns the command
       status tag from the SQL command that generated the "
-      (item function_param "Result") ".")))
+      (item parameter "Result") ".")))

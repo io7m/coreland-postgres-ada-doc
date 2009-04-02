@@ -1,8 +1,8 @@
 (section
-  (title "orientation")
+  (title "Orientation")
 
   (subsection
-    (title "overview")
+    (title "Overview")
 
     (para "This package provides a set of Ada bindings to the "
       (link-ext "http://www.postgresql.org" "PostgreSQL") " C interface ("

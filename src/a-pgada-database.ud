@@ -1,6 +1,6 @@
 (section
   (ref "pgada_database")
-  (title "PGAda.Database api reference")
+  (title "PGAda.Database API Reference")
 
   (para "The " (item ada_package "PGAda.Database") " package is
     the main API package for communication with a database server.

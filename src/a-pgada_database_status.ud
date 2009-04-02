@@ -3,7 +3,7 @@
   (title "PGAda.Database.Status")
   (para function_desc "Return connection status.")
   (subsection
-    (title "synopsis")
+    (title "Synopsis")
     (para-verbatim function_synopsis
 "with PGAda.Database;
 
@@ -15,7 +15,7 @@ function Status (Connection : in PGAda.Database.Connection_T)
   return PGAda.Database.Connection_Status_T;
 "))
   (subsection
-    (title "description")
+    (title "Description")
     (para
-      "The " (item function "Status") " function returns the status
-      of the connection " (item function_param "Connection") ".")))
+      "The " (item ada_function "Status") " function returns the status
+      of the connection " (item parameter "Connection") ".")))

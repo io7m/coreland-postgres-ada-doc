@@ -3,17 +3,17 @@
   (title "PGAda.Errors.Error_Value")
   (para function_desc "Return hostname of a connection.")
   (subsection
-    (title "synopsis")
+    (title "Synopsis")
     (para-verbatim function_synopsis
 "with PGAda.Errors;
 
 function Error_Value (code : string) return PGAda.Errors.Error_Value_T;
 "))
   (subsection
-    (title "description")
+    (title "Description")
     (para
-      "The " (item function "Error_Value") " function translates the error
-      string " (item function_param "code") " to one of the values in the
+      "The " (item ada_function "Error_Value") " function translates the error
+      string " (item parameter "code") " to one of the values in the
       enumeration type " (item ada_type "Error_Value_T") ".")
     (para
       "Please consult the specification in " (item file_name "pgada-errors.ads")

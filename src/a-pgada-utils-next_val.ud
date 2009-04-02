@@ -3,7 +3,7 @@
   (title "PGAda.Utils.Next_Value")
   (para function_desc "Return next value in sequence.")
   (subsection
-    (title "synopsis")
+    (title "Synopsis")
     (para-verbatim function_synopsis
 "with PGAda.Utils;
 with PGAda.Database;
@@ -13,9 +13,9 @@ function Next_Value
    Sequence_Name : in String) return Integer;
 "))
   (subsection
-    (title "description")
+    (title "Description")
     (para
-      "The " (item function "Next_Value") " function returns the next
-       value in the sequence " (item function_param "Sequence_Name") " in
-       the database referenced by " (item function_param "DB") ".")))
+      "The " (item ada_function "Next_Value") " function returns the next
+       value in the sequence " (item parameter "Sequence_Name") " in
+       the database referenced by " (item parameter "DB") ".")))
 

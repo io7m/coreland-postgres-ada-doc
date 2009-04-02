@@ -3,15 +3,15 @@
   (title "PGAda.Database.Reset")
   (para function_desc "Reset communication channel to server.")
   (subsection
-    (title "synopsis")
+    (title "Synopsis")
     (para-verbatim function_synopsis
 "with PGAda.Database;
 
 procedure Reset (Connection : in PGAda.Database.Connection_T);
 "))
   (subsection
-    (title "description")
+    (title "Description")
     (para
-      "The " (item function "Reset") " function resets the
+      "The " (item ada_procedure "Reset") " procedure resets the
       communication channel to the server associated with "
-      (item function_param "Connection") ".")))
+      (item parameter "Connection") ".")))

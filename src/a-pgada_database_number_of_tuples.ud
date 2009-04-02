@@ -3,15 +3,15 @@
   (title "PGAda.Database.Number_Of_Tuples")
   (para function_desc "Return number of tuples in result.")
   (subsection
-    (title "synopsis")
+    (title "Synopsis")
     (para-verbatim function_synopsis
 "with PGAda.Database;
 
 function Number_Of_Tuples (Result : in PGAda.Database.Result_T) return Natural;
 "))
   (subsection
-    (title "description")
+    (title "Description")
     (para
-      "The " (item function "Number_Of_Tuples") " function returns the
+      "The " (item ada_function "Number_Of_Tuples") " function returns the
       number of tuples returned in the result "
-      (item function_param "Result") ".")))
+      (item parameter "Result") ".")))
