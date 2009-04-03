@@ -1,17 +1,20 @@
 (section
   (ref "pgada_thin_pq_f_type")
   (title "PGAda.Thin.PQ_F_Type")
-  (para function_desc "XXX: TODO.")
+  (para function_desc "Returns the data type associated with the given column number.")
   (subsection
     (title "Synopsis")
     (para-verbatim function_synopsis
 "with PGAda.Thin;
+with Interfaces.C;
+
+package C renames Interfaces.C;
 
 function PQ_F_Type
-  (DB            : in PGAda.Database.Connection_T'Class;
-   Sequence_Name : in String) return Integer;
+ (Res         : PG_Result_Access_t;
+  Field_Index : C.int) return Oid;
 "))
   (subsection
     (title "Description")
     (para
-      "The " (item ada_function "PQ_F_Type") " function.")))
+      "See " (link-ext "http://www.postgresql.org/docs/8.3/static/libpq-exec.html#AEN31398") ".")))

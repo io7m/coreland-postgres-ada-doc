@@ -1,17 +1,15 @@
 (section
   (ref "pgada_thin_pq_reset")
   (title "PGAda.Thin.PQ_Reset")
-  (para function_desc "XXX: TODO.")
+  (para function_desc "Resets the communication channel to the server.")
   (subsection
     (title "Synopsis")
     (para-verbatim function_synopsis
 "with PGAda.Thin;
 
-function PQ_Reset
-  (DB            : in PGAda.Database.Connection_T'Class;
-   Sequence_Name : in String) return Integer;
+procedure PQ_Reset (Conn : in PG_Conn_Access_t);
 "))
   (subsection
     (title "Description")
     (para
-      "The " (item ada_function "PQ_Reset") " function.")))
+      "See " (link-ext "http://www.postgresql.org/docs/8.3/static/libpq-connect.html#AEN30594") ".")))

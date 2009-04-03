@@ -1,17 +1,15 @@
 (section
   (ref "pgada_thin_pq_finish")
   (title "PGAda.Thin.PQ_Finish")
-  (para function_desc "XXX: TODO.")
+  (para function_desc "Closes the connection to the server.")
   (subsection
     (title "Synopsis")
     (para-verbatim function_synopsis
 "with PGAda.Thin;
 
-function PQ_Finish
-  (DB            : in PGAda.Database.Connection_T'Class;
-   Sequence_Name : in String) return Integer;
+procedure PQ_Finish (Conn : in PG_Conn_Access_t);
 "))
   (subsection
     (title "Description")
     (para
-      "The " (item ada_function "PQ_Finish") " function.")))
+      "See " (link-ext "http://www.postgresql.org/docs/8.3/static/libpq-connect.html#AEN30579") ".")))

@@ -1,17 +1,20 @@
 (section
   (ref "pgada_thin_pq_exec")
   (title "PGAda.Thin.PQ_Exec")
-  (para function_desc "XXX: TODO.")
+  (para function_desc "Returns the column name associated with the given column number.")
   (subsection
     (title "Synopsis")
     (para-verbatim function_synopsis
 "with PGAda.Thin;
+with Interfaces.C.Strings;
+
+package CS renames Interfaces.C.Strings;
 
 function PQ_Exec
-  (DB            : in PGAda.Database.Connection_T'Class;
-   Sequence_Name : in String) return Integer;
+ (Conn  : PG_Conn_Access_t;
+  Query : CS.chars_ptr) return PG_Result_Access_t;
 "))
   (subsection
     (title "Description")
     (para
-      "The " (item ada_function "PQ_Exec") " function.")))
+      "See " (link-ext "http://www.postgresql.org/docs/8.3/static/libpq-exec.html#AEN31335") ".")))

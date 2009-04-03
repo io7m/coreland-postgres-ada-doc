@@ -1,17 +1,20 @@
 (section
   (ref "pgada_thin_pq_result_error_field")
   (title "PGAda.Thin.PQ_Result_Error_Field")
-  (para function_desc "XXX: TODO.")
+  (para function_desc "Returns an individual field of an error report.")
   (subsection
     (title "Synopsis")
     (para-verbatim function_synopsis
 "with PGAda.Thin;
+with Interfaces.C.Strings;
+
+package CS renames Interfaces.C.Strings;
 
 function PQ_Result_Error_Field
-  (DB            : in PGAda.Database.Connection_T'Class;
-   Sequence_Name : in String) return Integer;
+ (Res   : PG_Result_Access_t;
+  Field : Error_Field) return CS.chars_ptr;
 "))
   (subsection
     (title "Description")
     (para
-      "The " (item ada_function "PQ_Result_Error_Field") " function.")))
+      "See " (link-ext "http://www.postgresql.org/docs/8.3/static/libpq-exec.html#AEN31186") ".")))

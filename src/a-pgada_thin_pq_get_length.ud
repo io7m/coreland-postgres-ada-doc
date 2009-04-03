@@ -1,17 +1,21 @@
 (section
   (ref "pgada_thin_pq_get_length")
   (title "PGAda.Thin.PQ_Get_Length")
-  (para function_desc "XXX: TODO.")
+  (para function_desc "Returns the actual length of a field value in bytes.")
   (subsection
     (title "Synopsis")
     (para-verbatim function_synopsis
 "with PGAda.Thin;
+with Interfaces.C;
+
+package C renames Interfaces.C;
 
 function PQ_Get_Length
-  (DB            : in PGAda.Database.Connection_T'Class;
-   Sequence_Name : in String) return Integer;
+ (Res       : PG_Result_Access_t;
+  Tup_Num   : C.int;
+  Field_Num : C.int) return C.int;
 "))
   (subsection
     (title "Description")
     (para
-      "The " (item ada_function "PQ_Get_Length") " function.")))
+      "See " (link-ext "http://www.postgresql.org/docs/8.3/static/libpq-exec.html#AEN31478") ".")))

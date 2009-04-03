@@ -1,17 +1,17 @@
 (section
   (ref "pgada_thin_pq_options")
   (title "PGAda.Thin.PQ_Options")
-  (para function_desc "XXX: TODO.")
+  (para function_desc "Returns the command-line options passed in the connection request.")
   (subsection
     (title "Synopsis")
     (para-verbatim function_synopsis
 "with PGAda.Thin;
+with Interfaces.C.Strings;
 
-function PQ_Options
-  (DB            : in PGAda.Database.Connection_T'Class;
-   Sequence_Name : in String) return Integer;
+package CS renames Interfaces.C.Strings;
+
+function PQ_Options (Conn : PG_Conn_Access_t) return CS.chars_ptr;
 "))
   (subsection
     (title "Description")
-    (para
-      "The " (item ada_function "PQ_Options") " function.")))
+    (para "See " (link-ext "http://www.postgresql.org/docs/8.3/static/libpq-status.html#AEN30691") ".")))

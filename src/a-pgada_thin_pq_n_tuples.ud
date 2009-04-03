@@ -1,17 +1,18 @@
 (section
   (ref "pgada_thin_pq_n_tuples")
   (title "PGAda.Thin.PQ_N_Tuples")
-  (para function_desc "XXX: TODO.")
+  (para function_desc "Returns the number of rows (tuples) in the query result.")
   (subsection
     (title "Synopsis")
     (para-verbatim function_synopsis
 "with PGAda.Thin;
+with Interfaces.C.Strings;
 
-function PQ_N_Tuples
-  (DB            : in PGAda.Database.Connection_T'Class;
-   Sequence_Name : in String) return Integer;
+package CS renames Interfaces.C.Strings;
+
+function PQ_Cmd_Tuples (Res : PG_Result_Access_t) return CS.chars_ptr;
 "))
   (subsection
     (title "Description")
     (para
-      "The " (item ada_function "PQ_N_Tuples") " function.")))
+      "See " (link-ext "http://www.postgresql.org/docs/8.3/static/libpq-exec.html#AEN31319") ".")))

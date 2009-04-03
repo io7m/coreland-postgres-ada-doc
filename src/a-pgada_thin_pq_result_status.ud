@@ -1,17 +1,15 @@
 (section
   (ref "pgada_thin_pq_result_status")
   (title "PGAda.Thin.PQ_Result_Status")
-  (para function_desc "XXX: TODO.")
+  (para function_desc "Converts the enumerated type returned by PQresultStatus into a string constant describing the status code.")
   (subsection
     (title "Synopsis")
     (para-verbatim function_synopsis
 "with PGAda.Thin;
 
-function PQ_Result_Status
-  (DB            : in PGAda.Database.Connection_T'Class;
-   Sequence_Name : in String) return Integer;
+function PQ_Result_Status (Res : PG_Result_Access_t) return Exec_Status_t;
 "))
   (subsection
     (title "Description")
     (para
-      "The " (item ada_function "PQ_Result_Status") " function.")))
+      "See " (link-ext "http://www.postgresql.org/docs/8.3/static/libpq-exec.html#AEN31158") ".")))

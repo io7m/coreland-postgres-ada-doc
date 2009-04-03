@@ -1,17 +1,21 @@
 (section
   (ref "pgada_thin_pq_get_is_null")
   (title "PGAda.Thin.PQ_Get_Is_Null")
-  (para function_desc "XXX: TODO.")
+  (para function_desc "Tests a field for a null value.")
   (subsection
     (title "Synopsis")
     (para-verbatim function_synopsis
 "with PGAda.Thin;
+with Interfaces.C;
+
+package C renames Interfaces.C;
 
 function PQ_Get_Is_Null
-  (DB            : in PGAda.Database.Connection_T'Class;
-   Sequence_Name : in String) return Integer;
+ (Res       : PG_Result_Access_t;
+  Tup_Num   : C.int;
+  Field_Num : C.int) return C.int;
 "))
   (subsection
     (title "Description")
     (para
-      "The " (item ada_function "PQ_Get_Is_Null") " function.")))
+      "See " (link-ext "http://www.postgresql.org/docs/8.3/static/libpq-exec.html#AEN31465") ".")))

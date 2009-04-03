@@ -1,17 +1,15 @@
 (section
   (ref "pgada_thin_pq_clear")
   (title "PGAda.Thin.PQ_Clear")
-  (para function_desc "XXX: TODO.")
+  (para function_desc "Frees the storage associated with a PG_Result.")
   (subsection
     (title "Synopsis")
     (para-verbatim function_synopsis
 "with PGAda.Thin;
 
-function PQ_Clear
-  (DB            : in PGAda.Database.Connection_T'Class;
-   Sequence_Name : in String) return Integer;
+procedure PQ_Clear (Res : in PG_Result_Access_t);
 "))
   (subsection
     (title "Description")
     (para
-      "The " (item ada_function "PQ_Clear") " function.")))
+      "See " (link-ext "http://www.postgresql.org/docs/8.3/static/libpq-exec.html#AEN31282") ".")))

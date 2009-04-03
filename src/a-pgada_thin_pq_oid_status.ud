@@ -1,16 +1,18 @@
 (section
   (ref "pgada_thin_pq_oid_status")
   (title "PGAda.Thin.PQ_Oid_Status")
-  (para function_desc "XXX: TODO.")
+  (para function_desc "Returns a string with the OID of the inserted row.")
   (subsection
     (title "Synopsis")
     (para-verbatim function_synopsis
 "with PGAda.Thin;
+with Interfaces.C.Strings;
 
-function PQ_Oid_Status (Res : PG_Result_Access_T)
-  return Interfaces.C.Strings.chars_ptr;
+package CS renames Interfaces.C.Strings;
+
+function PQ_Oid_Status (Res : PG_Result_Access_t) return CS.chars_ptr;
 "))
   (subsection
     (title "Description")
     (para
-      "The " (item ada_function "PQ_Oid_Status") " function.")))
+      "See " (link-ext "http://www.postgresql.org/docs/8.3/static/libpq-exec.html#AEN31582") ".")))

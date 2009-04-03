@@ -1,17 +1,25 @@
 (section
   (ref "pgada_thin_pq_set_db_login")
   (title "PGAda.Thin.PQ_Set_Db_Login")
-  (para function_desc "XXX: TODO.")
+  (para function_desc "Makes a new connection to the database server.")
   (subsection
     (title "Synopsis")
     (para-verbatim function_synopsis
 "with PGAda.Thin;
+with Interfaces.C.Strings;
+
+package CS renames Interfaces.C.Strings;
 
 function PQ_Set_Db_Login
-  (DB            : in PGAda.Database.Connection_T'Class;
-   Sequence_Name : in String) return Integer;
+ (PG_Host    : CS.chars_ptr;
+  PG_Port    : CS.chars_ptr;
+  PG_Options : CS.chars_ptr;
+  PG_TTY     : CS.chars_ptr;
+  Db_Name    : CS.chars_ptr;
+  Login      : CS.chars_ptr;
+  Password   : CS.chars_ptr) return PG_Conn_Access_t;
 "))
   (subsection
     (title "Description")
     (para
-      "The " (item ada_function "PQ_Set_Db_Login") " function.")))
+      "See " (link-ext "http://www.postgresql.org/docs/8.3/static/libpq-connect.html#AEN30423") ".")))

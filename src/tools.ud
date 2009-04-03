@@ -1,5 +1,5 @@
 (section
-  (title "tool reference")
+  (title "Tool Reference")
   (contents)
   (include "t-pgada-conf.ud")
 )

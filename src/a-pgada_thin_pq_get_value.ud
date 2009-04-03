@@ -1,17 +1,23 @@
 (section
   (ref "pgada_thin_pq_get_value")
   (title "PGAda.Thin.PQ_Get_Value")
-  (para function_desc "XXX: TODO.")
+  (para function_desc "Returns a single field value of one row of a PQ_Result")
   (subsection
     (title "Synopsis")
     (para-verbatim function_synopsis
 "with PGAda.Thin;
+with Interfaces.C;
+with Interfaces.C.Strings;
+
+package C renames Interfaces.C;
+package CS renames Interfaces.C.Strings;
 
 function PQ_Get_Value
-  (DB            : in PGAda.Database.Connection_T'Class;
-   Sequence_Name : in String) return Integer;
+ (Res       : PG_Result_Access_t;
+  Tup_Num   : C.int;
+  Field_Num : C.int) return CS.chars_ptr;
 "))
   (subsection
     (title "Description")
     (para
-      "The " (item ada_function "PQ_Get_Value") " function.")))
+      "See " (link-ext "http://www.postgresql.org/docs/8.3/static/libpq-exec.html#AEN31444") ".")))

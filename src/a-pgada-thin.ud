@@ -31,5 +31,4 @@
   (include "a-pgada_thin_pq_result_status.ud")
   (include "a-pgada_thin_pq_set_db_login.ud")
   (include "a-pgada_thin_pq_status.ud")
-  (include "a-pgada_thin_pq_tty.ud")
 )

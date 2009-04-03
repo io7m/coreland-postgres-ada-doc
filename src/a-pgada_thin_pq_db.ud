@@ -1,17 +1,18 @@
 (section
   (ref "pgada_thin_pq_db")
   (title "PGAda.Thin.PQ_Db")
-  (para function_desc "XXX: TODO.")
+  (para function_desc "Returns the database name of the connection.")
   (subsection
     (title "Synopsis")
     (para-verbatim function_synopsis
 "with PGAda.Thin;
+with Interfaces.C.Strings;
 
-function PQ_Db
-  (DB            : in PGAda.Database.Connection_T'Class;
-   Sequence_Name : in String) return Integer;
+package CS renames Interfaces.C.Strings;
+
+function PQ_Db (Conn : PG_Conn_Access_t) return CS.chars_ptr;
 "))
   (subsection
     (title "Description")
     (para
-      "The " (item ada_function "PQ_Db") " function.")))
+      "See " (link-ext "http://www.postgresql.org/docs/8.3/static/libpq-status.html#AEN30641") ".")))

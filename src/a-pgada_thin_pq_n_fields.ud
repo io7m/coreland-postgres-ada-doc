@@ -1,17 +1,18 @@
 (section
   (ref "pgada_thin_pq_n_fields")
   (title "PGAda.Thin.PQ_N_Fields")
-  (para function_desc "XXX: TODO.")
+  (para function_desc "Returns the number of columns (fields) in each row of the query result.")
   (subsection
     (title "Synopsis")
     (para-verbatim function_synopsis
 "with PGAda.Thin;
+with Interfaces.C;
 
-function PQ_N_Fields
-  (DB            : in PGAda.Database.Connection_T'Class;
-   Sequence_Name : in String) return Integer;
+package C renames Interfaces.C;
+
+function PQ_N_Fields (Res : PG_Result_Access_t) return C.int;
 "))
   (subsection
     (title "Description")
     (para
-      "The " (item ada_function "PQ_N_Fields") " function.")))
+      "See " (link-ext "http://www.postgresql.org/docs/8.3/static/libpq-exec.html#AEN31327") ".")))

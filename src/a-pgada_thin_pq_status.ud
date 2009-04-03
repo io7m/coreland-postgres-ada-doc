@@ -1,17 +1,14 @@
 (section
   (ref "pgada_thin_pq_status")
   (title "PGAda.Thin.PQ_Status")
-  (para function_desc "XXX: TODO.")
+  (para function_desc "Returns the status of the connection.")
   (subsection
     (title "Synopsis")
     (para-verbatim function_synopsis
 "with PGAda.Thin;
 
-function PQ_Status
-  (DB            : in PGAda.Database.Connection_T'Class;
-   Sequence_Name : in String) return Integer;
+function PQ_Status (Conn : PG_Conn_Access_t) return Conn_Status_t;
 "))
   (subsection
     (title "Description")
-    (para
-      "The " (item ada_function "PQ_Status") " function.")))
+    (para "See " (link-ext "http://www.postgresql.org/docs/8.3/static/libpq-status.html#AEN30702") ".")))
