@@ -21,9 +21,9 @@ info "copy meta/id release/meta/id"
 cp meta/id release/meta/id ||
   die "could not copy meta/id release/meta/id"
 
-info "copy meta/title release/meta/title"
-cp meta/title release/meta/title ||
-  die "could not copy meta/title release/meta/title"
+info "copy meta/title_full release/meta/title_full"
+cp meta/title_full release/meta/title_full ||
+  die "could not copy meta/title_full release/meta/title_full"
 
 info "copy meta/pkg release/meta/package"
 cp meta/pkg release/meta/package ||
