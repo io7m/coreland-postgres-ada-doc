@@ -3,7 +3,7 @@
 
   ; config section
 
-  (section
+  (subsection
     (title "Configuration")
     (para
       "On installation, binaries, source files, libraries and
@@ -106,7 +106,7 @@
 
   ; compilation requirements
 
-  (section
+  (subsection
     (title "Requirements")
 
     
@@ -124,7 +124,7 @@
 
   ; compilation instructions
 
-  (section
+  (subsection
     (title "Compilation")
     (para "The package is compiled with the following commands: ")
 
