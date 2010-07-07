@@ -129,12 +129,7 @@
     (para "The package is compiled with the following commands: ")
 
     (para-verbatim example
-"make
-make tests")
-
-    (para "The first " (item command "make") " command compiles the
-    object code itself. The second command runs the test suite - any
-    errors here signal incorrect package behaviour.")
+"make")
 
     (para "To install:")
 
